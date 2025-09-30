@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: brain-tumor-app
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8502
+    volumes:
+      - name: model-data
+        path: /data
+
+volumes:
+  - name: model-data
+    sizeGB: 1
